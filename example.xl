@@ -1,0 +1,44 @@
+# EXAMPLE TRANSLATION FILE
+
+# xlate --- side-by-side translation prettifier
+# Copyright (C) 2019  Koki Fukuda
+#
+# xlate is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# xlate is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+
+# Although you may noticed, lines start with # are ignored
+
+# $foo$ defines variable foo.
+# You can use A-Z, a-z, 0-9 and _ as variable name.
+# Length of variable names are up to 32.
+$foo$ = bar
+
+# Variables can be overwritten afterward.
+
+# __TITLE__ special variable represents title for its file
+
+$__TITLE__$ = File Title
+
+
+# Iteration of
+#
+#  original text
+#  !translated text
+#
+
+Hello world!
+!こんにちは、世界
+
+How do you do?
+!はじめまして
