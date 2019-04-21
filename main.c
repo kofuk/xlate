@@ -107,7 +107,9 @@ int main(int argc, char **argv)
                 scanf("%s", buf);
                 if (strcmp(buf, "Y") != 0 && strcmp(buf, "y") != 0)
                 {
-                    // free allocated memory
+                    kill_all_contents(c);
+                    kill_all_variables(global_vartable);
+                    global_vartable = NULL;
                     continue;
                 }
             }
@@ -117,10 +119,10 @@ int main(int argc, char **argv)
         else
             out = stdout;
         render(c, out);
-        if (!is_stdin)
-        {
-            fclose(out);
-        }
+        if (!is_stdin) fclose(out);
+        kill_all_contents(c);
+        kill_all_variables(global_vartable);
+        global_vartable = NULL;
     }
     return 0;
 }

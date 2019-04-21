@@ -19,6 +19,16 @@
 
 #include "xlate.h"
 
+void kill_all_variables(VarTable *parent)
+{
+    if (parent == NULL) return;
+    free(parent->name);
+    free(parent->val);
+    kill_all_variables(parent->left);
+    kill_all_variables(parent->right);
+    free(parent);
+}
+
 VarTable *append_vartable(VarTable *parent, char *k, char *v)
 {
     if (parent == NULL)

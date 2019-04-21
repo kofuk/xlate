@@ -21,6 +21,7 @@
 
 #include "xlate.h"
 
+void kill_all_contents(Content *garbage);
 Content *parse(FILE *f);
 
 #endif

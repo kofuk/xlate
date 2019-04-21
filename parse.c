@@ -82,6 +82,14 @@ static void remove_return(char *str)
             str[i] = '\0';
 }
 
+void kill_all_contents(Content *garbage)
+{
+    if (garbage == NULL) return;
+    free(garbage->content);
+    kill_all_contents(garbage->next);
+    free(garbage);
+}
+
 Content *parse(FILE *f)
 {
     char buf[BUF_SIZE];

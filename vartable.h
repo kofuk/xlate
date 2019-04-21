@@ -19,6 +19,7 @@
 
 #include "xlate.h"
 
+void kill_all_variables(VarTable *parent);
 VarTable *append_vartable(VarTable *parent, char *k, char *v);
 char *lookup_vartable(VarTable *parent, char *name);
 
